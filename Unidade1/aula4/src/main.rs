@@ -1,14 +1,28 @@
-use std::cell::RefCell; //biblioteca standard do rust sendo importada
+fn main() {
+    let mut num = 5;
+    // Cria um ponteiro cru para num.
+    let r1: *mut i32 = &mut num;
+
+    // Bloco unsafe para desreferenciar o ponteiro.
+    unsafe {
+        *r1 += 1;
+        println!("Valor modificado via ponteiro cru: {}", *r1);
+    }
+}
+
+
+
+//use std::cell::RefCell; //biblioteca standard do rust sendo importada
 //RefCell = referencia de célula
 
-fn main() {
-    let data = RefCell::new(5);
-    {
-        let mut borrowed = data.borrow_mut(); // Empréstimo mutável em tempo de execução
-        *borrowed += 1;
-    }
-    println!("Valor atualizado: {}", data.borrow());
-}
+//fn main() {
+//    let data = RefCell::new(5);
+//    {
+//        let mut borrowed = data.borrow_mut(); // Empréstimo mutável em tempo de execução
+//        *borrowed += 1;
+//    }
+//    println!("Valor atualizado: {}", data.borrow());
+//}
 
 
 

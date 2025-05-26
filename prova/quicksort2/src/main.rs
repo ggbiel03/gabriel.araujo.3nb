@@ -18,7 +18,7 @@ impl QuickSort {
         let pivot = arr.remove(0);
         let mut menores = Vec::new();
         let mut maiores = Vec::new();
-        //separo os numeros em dois vetores diferentes do pivô
+        //separo os numeros em dois vetores diferentes do o pivô
         for n in arr {
             if n <= pivot {
                 menores.push(n);
@@ -43,10 +43,10 @@ fn main() {
     //exibe o array original 
     println!("Array original: {:?}", qs.arr);
 
-    //sorteia o array
+    // sorteia o array
     qs.sort();
 
-    //exibe o array ordenado
+    //exibe o array ordenado [3, 5, 7, 12, 23, 31, 32, 34, 43, 62]
     println!("Array ordenado: {:?}", qs.arr);
 }
 
